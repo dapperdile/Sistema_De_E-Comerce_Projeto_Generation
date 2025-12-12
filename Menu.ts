@@ -42,7 +42,7 @@ export function main() {
         console.log("#####################################################");
         console.log("                                                     ");
         console.log("            1 - Adicionar jogo a Loja                  ");
-        console.log("            2 - Listar Jogos              ");
+        console.log("            2 - Listar jogos              ");
         console.log("            3 - Buscar jogo por número              ");
         console.log("            4 - Atualizar Informações do jogo             ");
         console.log("            5 - Apagar jogo                         ");
@@ -165,7 +165,9 @@ export function main() {
                 break;
 
             case 6:
-                while (true) {
+                let sairCarrinho = false;
+
+                while (!sairCarrinho) {
                     console.log(colors.bg.blue, colors.fg.whitestrong)
                     console.log("\n############## CARRINHO ##############")
                     console.log("                                        ")
@@ -178,9 +180,9 @@ export function main() {
                     console.log(colors.reset)
 
                     console.log("Entre com a opção desejada: ");
-                    let op = readlinesync.questionInt("")
+                    let opcao = readlinesync.questionInt("")
 
-                    switch (op) {
+                    switch (opcao) {
                         case 1:
                             carrinho.listar()
                             keyPress()
@@ -220,12 +222,16 @@ export function main() {
                             break
 
                         case 5:
-                            return
+                            sairCarrinho = true
+                            break
 
                         default:
                             console.log(colors.fg.redstrong, "Opção inválida!", colors.reset)
+                            keyPress()
+                            break;
                     }
                 }
+                break
 
 
             default:
