@@ -69,10 +69,10 @@ export abstract class Jogo {
         console.log("\n\n############################################");
         console.log("Informações do Jogo:");
         console.log("############################################");
-        console.log("Codigo do Jogo: " + this._codigo);
-        console.log("Plataforma: " + this._plataforma);
-        console.log("Tipo de Mídia: " + tipo);
-        console.log("Titulo: " + this._titulo);
-        console.log("Valor: " + this.valor.toFixed(2));
+        console.log(`Codigo do Jogo: ${this._codigo}`);
+        console.log(`Plataforma: ${this._plataforma}`);
+        console.log(`Tipo de Mídia: ${tipo}`);
+        console.log(`Titulo: ${this._titulo}`);
+        console.log(`Valor: ${this.valor.toFixed(2)}`);
     }
 }

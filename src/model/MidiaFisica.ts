@@ -19,6 +19,6 @@ export class MidiaFisica extends Jogo {
 
     public visualizar(): void {
         super.visualizar()
-        console.log("Frete: ", + this._frete.toFixed(2))
+        console.log(`Frete: ${this._frete.toFixed(2)}`)
     }
 }
