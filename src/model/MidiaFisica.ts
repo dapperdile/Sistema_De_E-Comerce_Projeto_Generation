@@ -39,9 +39,11 @@ export class MidiaFisica extends Jogo {
         return false
     }
 
+
     public visualizar(): void {
         super.visualizar()
         console.log(`Frete: ${this._frete.toFixed(2)}`)
         console.log(`Preço Total (com frete): ${this.calcularPrecoTotal().toFixed(2)}`)
+        console.log(`Quantidade em estoque: ${this._estoque}`)
     }
 }

@@ -49,6 +49,7 @@ export abstract class Jogo {
         this._valor = valor
     }
 
+
     public visualizar(): void {
         let tipo: string = ""
 
