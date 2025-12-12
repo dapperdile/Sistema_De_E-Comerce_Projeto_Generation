@@ -3,7 +3,6 @@ import { colors } from "./src/util/Colors";
 import { JogoController } from "./src/controller/JogoController";
 import { MidiaDigital } from "./src/model/MidiaDigital";
 import { MidiaFisica } from "./src/model/MidiaFisica";
-import { read } from "node:fs";
 
 export function main() {
 
@@ -17,16 +16,16 @@ export function main() {
     // Criando Jogos para Teste
     console.log("\nCriar Jogos\n");
 
-    let mf1: MidiaFisica = new MidiaFisica(jogos.gerarCodigo(), "PC", 1, "ELDEN RING", 250, 50.0);
+    let mf1: MidiaFisica = new MidiaFisica(jogos.gerarCodigo(), "PC", "ELDEN RING", 250, 50.0);
     jogos.cadastrar(mf1);
     
-    let mf2: MidiaFisica = new MidiaFisica(jogos.gerarCodigo(), "PS4", 1, "Bloodborne", 200, 30.0);
+    let mf2: MidiaFisica = new MidiaFisica(jogos.gerarCodigo(), "PS4", "Bloodborne", 200, 30.0);
     jogos.cadastrar(mf2);
     
-    let md1: MidiaDigital = new MidiaDigital(jogos.gerarCodigo(), "XBOX", 2, "HALO 3", 180, "ABCD-1234");
+    let md1: MidiaDigital = new MidiaDigital(jogos.gerarCodigo(), "XBOX", "HALO 3", 180);
     jogos.cadastrar(md1);
     
-    let md2: MidiaDigital = new MidiaDigital(jogos.gerarCodigo(), "SWITCH 2", 2, "Donkey Kong Bananza", 350, "X0M1A8S9Q4");
+    let md2: MidiaDigital = new MidiaDigital(jogos.gerarCodigo(), "SWITCH 2", "Donkey Kong Bananza", 350,);
     jogos.cadastrar(md2);
 
     jogos.listarTodos();
@@ -81,12 +80,12 @@ export function main() {
                     case 1:
                         console.log("Digite o valor do Frete (R$): ")
                         frete = readlinesync.questionFloat("")
-                        jogos.cadastrar(new MidiaFisica(jogos.gerarCodigo(), plataforma, tipo, titulo, valor, frete))
+                        jogos.cadastrar(new MidiaFisica(jogos.gerarCodigo(), plataforma, titulo, valor, frete))
                         break
                     case 2:
-                        console.log("Digite o Codigo de Ativação: ")
-                        codigoAtivacao = readlinesync.question("")
-                        jogos.cadastrar(new MidiaDigital(jogos.gerarCodigo(), plataforma, tipo, titulo, valor, codigoAtivacao))
+/*                         console.log("Digite o Codigo de Ativação: ")
+                        codigoAtivacao = readlinesync.question("") */
+                        jogos.cadastrar(new MidiaDigital(jogos.gerarCodigo(), plataforma, titulo, valor,))
                         break
                 }
 
@@ -114,7 +113,7 @@ export function main() {
                 console.log("Digite o codigo do Jogo: ")
                 codigo = readlinesync.questionInt("")
 
-                let jogo = jogos.buscarNoArray(codigo)
+                let jogo = jogos.encontrarJogoPorCodigo(codigo)
 
                 if (jogo != null) {
                     console.log("Digite a Plataforma do Jogo")
@@ -132,12 +131,12 @@ export function main() {
                         case 1:
                             console.log("Digite o valor do Frete (R$): ")
                             frete = readlinesync.questionFloat("")
-                            jogos.atualizar(new MidiaFisica(codigo, plataforma, tipo, titulo, valor, frete))
+                            jogos.atualizar(new MidiaFisica(codigo, plataforma, titulo, valor, frete))
                             break
                         case 2:
-                            console.log("Digite o Codigo de Ativação: ")
-                            codigoAtivacao = readlinesync.question("")
-                            jogos.atualizar(new MidiaDigital(codigo, plataforma, tipo, titulo, valor, codigoAtivacao))
+/*                             console.log("Digite o Codigo de Ativação: ")
+                            codigoAtivacao = readlinesync.question("") */
+                            jogos.atualizar(new MidiaDigital(codigo, plataforma, titulo, valor))
                             break
                     }
                 } else {

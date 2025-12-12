@@ -1,18 +1,13 @@
 export abstract class Jogo {
+    
+    constructor(
+        private _codigo: number,
+        private _plataforma: string,
+        private _tipo: number,
+        private _titulo: string,
+        private _valor: number
+    ) {}
 
-    private _codigo: number
-    private _plataforma: string
-    private _tipo: number
-    private _titulo: string
-    private _valor: number
-
-    constructor(codigo: number, plataforma: string, tipo: number, titulo: string, valor: number) {
-        this._codigo = codigo
-        this._plataforma = plataforma
-        this._tipo = tipo
-        this._titulo = titulo
-        this._valor = valor
-    }
 
     public get codigo() {
         return this._codigo
