@@ -23,3 +23,5 @@ Typescript
 - Atualizar dados do jogo
 
 - Apagar jogo
+
+- Menu Carrinho para adicionar, listar e ver o valor total dos jogos

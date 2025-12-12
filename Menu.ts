@@ -12,7 +12,7 @@ export function main() {
 
     // Declaração de Variáveis
     let opcao, codigo, tipo, valor, frete, estoque: number
-    let plataforma, titulo, codigoAtivacao: string
+    let plataforma, titulo: string
     const tiposJogos = ['Mídia Física', 'Mídia Digital']
 
     // Criando Jogos para Teste
@@ -41,8 +41,8 @@ export function main() {
         console.log("                                                     ");
         console.log("#####################################################");
         console.log("                                                     ");
-        console.log("            1 - Adicionar jogo                   ");
-        console.log("            2 - Listar Carrinho               ");
+        console.log("            1 - Adicionar jogo a Loja                  ");
+        console.log("            2 - Listar Jogos              ");
         console.log("            3 - Buscar jogo por número              ");
         console.log("            4 - Atualizar Informações do jogo             ");
         console.log("            5 - Apagar jogo                         ");
@@ -99,7 +99,7 @@ export function main() {
                 keyPress()
                 break;
             case 2:
-                console.log(colors.fg.whitestrong,"\n\nListar todas os Jogos\n\n",colors.reset);
+                console.log(colors.fg.whitestrong,"\n\nListar todos os Jogos\n\n",colors.reset);
 
                 jogos.listarTodos()
 
